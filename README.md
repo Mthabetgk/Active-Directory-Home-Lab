@@ -32,7 +32,7 @@ To ensure safety and security, the entire infrastructure runs inside a closed pr
 
 ### Phase 1: Core Networking & Server Setup
 1. Isolated both virtual machines by switching their network adapters from NAT to **Internal Network** with the identifier `LabNetwork`.
-2. Statically assigned the server's IP address to `192.168.10.1` via the command-line and network adapter settings.
+2. Statically assigned the server's IP address to `192.168.10.1` via the network adapter properties GUI (ncpa.cpl).
 3. Successfully installed and verified the active directory domain service roles on the server manager platform.
 
 <img width="959" height="566" alt="Screenshot 2026-06-29 201314" src="https://github.com/user-attachments/assets/2e80e4bb-a9f2-4070-a48a-c20bec12d017" />
