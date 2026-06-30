@@ -59,6 +59,22 @@ To ensure safety and security, the entire infrastructure runs inside a closed pr
 
 ---
 
-## 4. Operational Troubleshooting & Lessons Learned
+ Operational Troubleshooting & Lessons Learned
 * **The DNS Dependency:** During initial configuration, attempts to reach the domain controller by name failed. I observed that windows operating systems rely strictly on DNS to resolve the location of a domain controller. Manually overriding the automatic adapter setting to specify `192.168.10.1` as the primary DNS lookup mechanism instantly solved the issue.
 * **Centralization Mechanics:** This exercise effectively demonstrates how enterprise infrastructures handle scale. By using security groups instead of configuring individual computers manually, IT help desk technicians can immediately authorize or restrict network capabilities for thousands of endpoints natively through the Domain Controller.
+* 
+## Phase 4: Installing the Help Desk Software (osTicket & XAMPP)
+
+To make this lab feel like a real IT job, I needed a way for users to submit help requests. I decided to install an open-source program called **osTicket** directly onto my Windows Server. Since real companies don't just run software out of a basic folder, I had to set up a full local web server environment to host it.
+
+### The Tools Used:
+* **XAMPP:** A bundle package that gave me a local web server (**Apache**) and a database database container (**MySQL**).
+* **osTicket:** The actual software my "users" and "IT agents" will interact with.
+
+### Exactly How I Set It Up:
+1. **Moved the Files:** I dropped the osTicket files right into the server's web directory (`C:\xampp\htdocs\osticket`) so the Apache web server could read them.
+2. **Fixed Server Settings:** Out of the box, XAMPP turns off features osTicket needs. I went into the server's backend configuration file (`php.ini`) using Notepad and manually turned on the extensions for time zones (`intl`), graphics handling (`gd`), and email routing (`imap`). 
+3. **Created the Database:** I opened up the database controller (phpMyAdmin) and created a blank database room called `osticket` so the app would have a place to save user tickets, passwords, and logs.
+4. **Locked Down Security:** After running the installer successfully, I renamed the master config file to `ost-config.php`, flipped its windows properties to **Read-Only** so it couldn't be tampered with, and completely deleted the setup folder so nobody could reset my application from the outside.
+<img width="959" height="563" alt="Screenshot 2026-06-30 194523" src="https://github.com/user-attachments/assets/e0c72f11-3a15-4aff-8020-b50a75b82f26" />
+<img width="959" height="566" alt="Screenshot 2026-06-30 193813" src="https://github.com/user-attachments/assets/b9407d31-d8ac-4c89-bbeb-6bc88a292e61" />
