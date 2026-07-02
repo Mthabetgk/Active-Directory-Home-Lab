@@ -78,3 +78,61 @@ To make this lab feel like a real IT job, I needed a way for users to submit hel
 4. **Locked Down Security:** After running the installer successfully, I renamed the master config file to `ost-config.php`, flipped its windows properties to **Read-Only** so it couldn't be tampered with, and completely deleted the setup folder so nobody could reset my application from the outside.
 <img width="959" height="563" alt="Screenshot 2026-06-30 194523" src="https://github.com/user-attachments/assets/e0c72f11-3a15-4aff-8020-b50a75b82f26" />
 <img width="959" height="566" alt="Screenshot 2026-06-30 193813" src="https://github.com/user-attachments/assets/b9407d31-d8ac-4c89-bbeb-6bc88a292e61" />
+## 📁 Project Phase: Help Desk Simulation & Identity Management
+
+### 🛠️ Overview
+This phase simulates an enterprise IT environment by integrating user-facing help desk operations with system administration. Using **osTicket** as the central ticketing system and **Active Directory (AD DC)** for identity management, I acted as both the end-user reporting technical issues and the IT Support Engineer resolving them through account provisioning, security policy enforcement, and permission escalation.
+
+---
+
+### 💻 System Architecture & Setup Choices (Why This Matters)
+*   **Virtual Network Isolation:** The environment is configured using an **Internal Network** within VirtualBox. This isolates the Domain Controller and Client machines from the physical local network, establishing a safe sandbox for system modifications without security risks to external production environments.
+*   **Static IP Framework:** The Domain Controller is assigned a manually configured static IP address. In enterprise networking, infrastructure servers must retain a constant IP address to ensure reliable DNS resolution and prevent communication failures with client workstations.
+
+---
+
+### 🚀 Lab Simulations & Ticket Resolutions
+
+#### 🔹 Case 1: Employee Onboarding & Account Provisioning
+*   **Scenario:** HR submitted a ticket requesting a corporate network account for a new Marketing hire, John Doe.
+*   **Technical Resolution:** 
+    1. Logged into the `osTicket Staff Panel`, claimed the ticket, and moved it to an active status.
+    2. Opened **Active Directory Users and Computers (ADUC)** on the Windows Server Domain Controller.
+    3. Verified the corporate hierarchy and ensured a proper **Organizational Unit (OU)** existed for the `Marketing` department to allow targeted Group Policy deployment.
+    4. Created a new user object (`jdoe`) within the Marketing OU.
+    5. Configured security best practices by assigning a temporary password and enforcing **"User must change password at next logon."** This ensures administrative compliance with data privacy standards, as the engineer never learns the user's permanent private credentials.
+    6. Logged the technical closure notes in osTicket and marked the ticket as **Resolved**.
+#### 📸 Deployment Screenshots
+![Active Directory Account Configuration]
+![osTicket Onboarding Resolution Thread](Screenshot%202026-07-01%20210702.png)
+
+#### 🔹 Case 2: Account Lockout Remediation
+*   **Scenario:** A Finance department accountant reported being locked out of their workstation after multiple failed login attempts following a vacation.
+*   **Technical Resolution:**
+    1. Located the urgent security ticket in the osTicket queue and assigned it to my administrative profile.
+    2. Accessed **ADUC**, navigated to the `Finance` OU, and opened the properties for user `dmiller`.
+    3. Under the **Account** tab, identified that the account was flagged as locked by the domain's security policies.
+    4. Selected the **"Unlock account"** checkbox and applied the changes to restore immediate access.
+    5. Provided a professional technical response to the user via osTicket explaining the lockout mechanism, advised careful credential entry to avoid re-triggering the security threshold, and closed the ticket.
+#### 📸 Deployment Screenshots
+![Active Directory Account Unlock Security Option](Screenshot%202026-07-01%20210742.png)
+![osTicket Lockout Resolution Note](Screenshot%202026-07-01%20211049.png)
+
+#### 🔹 Case 3: Role Escalation & Security Group Membership
+*   **Scenario:** A newly promoted IT Operations supervisor requested access to restricted Tier 2 internal documentation folders that were throwing permission errors.
+*   **Technical Resolution:**
+    1. Opened the ticket in osTicket and initialized ownership to track the administrative escalation.
+    2. Opened **ADUC** to manage the user's domain security token.
+    3. Modified the user's account properties by navigating to the **Member Of** tab.
+    4. Added the user to the higher-privileged security group (e.g., `Domain Admins` / `HelpDesk_L2`) to grant inherited read/write permissions for the network file share.
+    5. Informed the user via the help desk platform that the permissions were active, and advised a local workstation logoff/logon cycle to regenerate their Kerberos security token with the new group memberships. Closed the ticket.
+#### 📸 Deployment Screenshots
+![Active Directory Security Group Assignment](Screenshot%202026-07-01%20210817.png)
+![osTicket Permission Escalation Resolution Thread](Screenshot%202026-07-01%20210817.png)
+---
+
+### 🔑 Key Portfolio Takeaways
+*   **User Lifecycle Management:** Hands-on experience with user account creation, security group assignment, and account lockout management inside a Windows Server environment.
+*   **Ticketing Proficiency:** Complete mastery of the ticket lifecycle (Creation ➡️ Triage ➡️ Assignment ➡️ Resolution ➡️ Documentation).
+*   **Enterprise Best Practices:** Demonstrated understanding of data privacy (enforced password resets) and role-based access control (RBAC via security groups).
+![osTicket Successfully Resolved Ticket Queue](Screenshot%202026-07-01%20210943.png)
