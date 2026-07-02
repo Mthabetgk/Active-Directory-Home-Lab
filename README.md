@@ -35,7 +35,7 @@ To ensure safety and security, the entire infrastructure runs inside a closed pr
 2. Statically assigned the server's IP address to `192.168.10.1` via the network adapter properties GUI (ncpa.cpl).
 3. Successfully installed and verified the active directory domain service roles on the server manager platform.
 
-<img width="959" height="566" alt="Screenshot 2026-06-29 201314" src="https://github.com/user-attachments/assets/2e80e4bb-a9f2-4070-a48a-c20bec12d017" />
+
 <img width="479" height="563" alt="Screenshot 2026-06-29 200144" src="https://github.com/user-attachments/assets/c4406971-7761-457a-bf19-31a689239817" />
 
 ### Phase 2: Active Directory Directory Architecture
@@ -99,13 +99,14 @@ This phase simulates an enterprise IT environment by integrating user-facing hel
     1. Logged into the `osTicket Staff Panel`, claimed the ticket, and moved it to an active status.
     2. Opened **Active Directory Users and Computers (ADUC)** on the Windows Server Domain Controller.
     3. Verified the corporate hierarchy and ensured a proper **Organizational Unit (OU)** existed for the `Marketing` department to allow targeted Group Policy deployment.
-    4. Created a new user object (`jdoe`) within the Marketing OU.
+    4. Created a new user object (`ajohn`) within the Marketing OU.
     5. Configured security best practices by assigning a temporary password and enforcing **"User must change password at next logon."** This ensures administrative compliance with data privacy standards, as the engineer never learns the user's permanent private credentials.
     6. Logged the technical closure notes in osTicket and marked the ticket as **Resolved**.
 #### 📸 Deployment Screenshots
+<img width="959" height="564" alt="Screenshot 2026-07-01 210817" src="https://github.com/user-attachments/assets/116a0122-50f0-4572-b437-9e64723d33b1" />
+<img width="959" height="560" alt="Screenshot 2026-07-01 211049" src="https://github.com/user-attachments/assets/e8287473-e173-4f5e-8c21-b08c555dd01f" />
 
-<img width="959" height="562" alt="Screenshot 2026-07-01 210847" src="https://github.com/user-attachments/assets/73c812c9-e045-43b4-91e5-ea54c2dc65c6" />
-<img width="959" height="565" alt="Screenshot 2026-07-01 210702" src="https://github.com/user-attachments/assets/6d008986-a31f-4346-9502-dedb61d45650" />
+
 
 #### 🔹 Case 2: Account Lockout Remediation
 *   **Scenario:** A Finance department accountant reported being locked out of their workstation after multiple failed login attempts following a vacation.
@@ -116,10 +117,10 @@ This phase simulates an enterprise IT environment by integrating user-facing hel
     4. Selected the **"Unlock account"** checkbox and applied the changes to restore immediate access.
     5. Provided a professional technical response to the user via osTicket explaining the lockout mechanism, advised careful credential entry to avoid re-triggering the security threshold, and closed the ticket.
 
-<img width="959" height="560" alt="Screenshot 2026-07-01 211049" src="https://github.com/user-attachments/assets/9dbb25d5-a366-41a9-9253-80895e07ed21" />
-<img width="959" height="564" alt="Screenshot 2026-07-01 210943" src="https://github.com/user-attachments/assets/e5af74e8-f84a-42a6-97e0-52b03c502680" />
-<img width="959" height="564" alt="Screenshot 2026-07-01 210817" src="https://github.com/user-attachments/assets/9fe426b9-c1e7-4b4b-b314-0bab0b4338ef" />
-<img width="959" height="563" alt="Screenshot 2026-07-01 210742" src="https://github.com/user-attachments/assets/13f37a9e-19de-452a-a0a3-5147efb09800" />
+<img width="959" height="564" alt="Screenshot 2026-07-01 210943" src="https://github.com/user-attachments/assets/4b4e7341-d5db-4166-93bc-6cc371f4814d" />
+ 
+<img width="959" height="563" alt="Screenshot 2026-07-01 210742" src="https://github.com/user-attachments/assets/5682bb1c-a0b1-4d78-97b4-bb1a810d2681" />
+
 
 #### 🔹 Case 3: Role Escalation & Security Group Membership
 *   **Scenario:** A newly promoted IT Operations supervisor requested access to restricted Tier 2 internal documentation folders that were throwing permission errors.
@@ -130,8 +131,9 @@ This phase simulates an enterprise IT environment by integrating user-facing hel
     4. Added the user to the higher-privileged security group (e.g., `Domain Admins` / `HelpDesk_L2`) to grant inherited read/write permissions for the network file share.
     5. Informed the user via the help desk platform that the permissions were active, and advised a local workstation logoff/logon cycle to regenerate their Kerberos security token with the new group memberships. Closed the ticket.
 #### 📸 Deployment Screenshots
-<img width="959" height="564" alt="Screenshot 2026-07-01 210943" src="https://github.com/user-attachments/assets/9d84c9f3-83e6-4a6e-84c5-36346b9032f9" />
-<img width="959" height="564" alt="Screenshot 2026-07-01 210817" src="https://github.com/user-attachments/assets/f6b40647-6ab3-4e47-b443-9ab7d795b17f" />
+
+<img width="959" height="562" alt="Screenshot 2026-07-01 210847" src="https://github.com/user-attachments/assets/695e3987-371d-45be-a1ba-ca0f3ce501be" />
+<img width="959" height="565" alt="Screenshot 2026-07-01 210722" src="https://github.com/user-attachments/assets/c586664f-1170-4d74-912b-5c18ed4e1cd5" />
 
 ---
 
@@ -139,3 +141,4 @@ This phase simulates an enterprise IT environment by integrating user-facing hel
 *   **User Lifecycle Management:** Hands-on experience with user account creation, security group assignment, and account lockout management inside a Windows Server environment.
 *   **Ticketing Proficiency:** Complete mastery of the ticket lifecycle (Creation ➡️ Triage ➡️ Assignment ➡️ Resolution ➡️ Documentation).
 *   **Enterprise Best Practices:** Demonstrated understanding of data privacy (enforced password resets) and role-based access control (RBAC via security groups).
+<img width="959" height="566" alt="Screenshot 2026-06-29 201314" src="https://github.com/user-attachments/assets/2e80e4bb-a9f2-4070-a48a-c20bec12d017" />
