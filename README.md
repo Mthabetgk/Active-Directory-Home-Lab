@@ -103,10 +103,9 @@ This phase simulates an enterprise IT environment by integrating user-facing hel
     5. Configured security best practices by assigning a temporary password and enforcing **"User must change password at next logon."** This ensures administrative compliance with data privacy standards, as the engineer never learns the user's permanent private credentials.
     6. Logged the technical closure notes in osTicket and marked the ticket as **Resolved**.
 #### 📸 Deployment Screenshots
-<img width="959" height="564" alt="Screenshot 2026-07-01 210817" src="https://github.com/user-attachments/assets/116a0122-50f0-4572-b437-9e64723d33b1" />
+
 <img width="959" height="560" alt="Screenshot 2026-07-01 211049" src="https://github.com/user-attachments/assets/e8287473-e173-4f5e-8c21-b08c555dd01f" />
-
-
+<img width="959" height="564" alt="Screenshot 2026-07-01 210817" src="https://github.com/user-attachments/assets/116a0122-50f0-4572-b437-9e64723d33b1" />
 
 #### 🔹 Case 2: Account Lockout Remediation
 *   **Scenario:** A Finance department accountant reported being locked out of their workstation after multiple failed login attempts following a vacation.
@@ -141,4 +140,5 @@ This phase simulates an enterprise IT environment by integrating user-facing hel
 *   **User Lifecycle Management:** Hands-on experience with user account creation, security group assignment, and account lockout management inside a Windows Server environment.
 *   **Ticketing Proficiency:** Complete mastery of the ticket lifecycle (Creation ➡️ Triage ➡️ Assignment ➡️ Resolution ➡️ Documentation).
 *   **Enterprise Best Practices:** Demonstrated understanding of data privacy (enforced password resets) and role-based access control (RBAC via security groups).
-<img width="959" height="566" alt="Screenshot 2026-06-29 201314" src="https://github.com/user-attachments/assets/2e80e4bb-a9f2-4070-a48a-c20bec12d017" />
+<img width="959" height="565" alt="Screenshot 2026-07-01 210702" src="https://github.com/user-attachments/assets/30765bdd-44ff-425f-97b8-56e3963e35b1" />
+
