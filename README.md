@@ -78,7 +78,7 @@ To make this lab feel like a real IT job, I needed a way for users to submit hel
 4. **Locked Down Security:** After running the installer successfully, I renamed the master config file to `ost-config.php`, flipped its windows properties to **Read-Only** so it couldn't be tampered with, and completely deleted the setup folder so nobody could reset my application from the outside.
 <img width="959" height="563" alt="Screenshot 2026-06-30 194523" src="https://github.com/user-attachments/assets/e0c72f11-3a15-4aff-8020-b50a75b82f26" />
 <img width="959" height="566" alt="Screenshot 2026-06-30 193813" src="https://github.com/user-attachments/assets/b9407d31-d8ac-4c89-bbeb-6bc88a292e61" />
-## 📁 Project Phase: Help Desk Simulation & Identity Management
+### 📁 Project Phase: Help Desk Simulation & Identity Management
 
 ### 🛠️ Overview
 This phase simulates an enterprise IT environment by integrating user-facing help desk operations with system administration. Using **osTicket** as the central ticketing system and **Active Directory (AD DC)** for identity management, I acted as both the end-user reporting technical issues and the IT Support Engineer resolving them through account provisioning, security policy enforcement, and permission escalation.
