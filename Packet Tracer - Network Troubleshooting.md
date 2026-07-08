@@ -1,3 +1,12 @@
+<img width="680" height="381" alt="Screenshot 2026-07-04 162547" src="https://github.com/user-attachments/assets/3d2146a8-237c-4b57-91a5-5fea63a4fe74" />
+<img width="673" height="280" alt="Screenshot 2026-07-04 162428" src="https://github.com/user-attachments/assets/a40321d5-fc9e-47b5-96d0-713bcc307ebc" />
+<img width="957" height="564" alt="Screenshot 2026-07-04 162412" src="https://github.com/user-attachments/assets/09cef0f0-b5d2-4261-b127-f2fcddd33f83" />
+<img width="680" height="381" alt="Screenshot 2026-07-04 162547" src="https://github.com/user-attachments/assets/3370a41e-0b6d-48b8-8fd8-b5c533497588" />
+<img width="673" height="280" alt="Screenshot 2026-07-04 162428" src="https://github.com/user-attachments/assets/41226fa6-5f71-49a5-bba6-c65265ac3a26" />
+<img width="957" height="564" alt="Screenshot 2026-07-04 162412" src="https://github.com/user-attachments/assets/eafafe53-d60d-456b-96fc-66b0e2eb899d" />
+<img width="957" height="564" alt="Screenshot 2026-07-04 162412" src="https://github.com/user-attachments/assets/4af90c6a-4964-4b4b-a474-4f1392525b0c" />
+<img width="680" height="381" alt="Screenshot 2026-07-04 162547" src="https://github.com/user-attachments/assets/cc6f7789-faff-4567-a563-7401bb40b54d" />
+<img width="673" height="280" alt="Screenshot 2026-07-04 162428" src="https://github.com/user-attachments/assets/1f08afd1-3325-41b4-ac9f-1102b888bd97" />
 ### 🌐 Cisco Core Infrastructure & Dynamic Identity Architecture
 
 ### 🛠️ Topology Overview
