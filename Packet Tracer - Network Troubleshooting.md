@@ -3,6 +3,7 @@
 
 ### 🛠️ Topology Overview
 I engineered a localized corporate network environment utilizing Cisco Packet Tracer to establish physical and logical connectivity baselines for enterprise network services. The physical design anchors an edge router to a 24-port managed access switch, provisioning dedicated links for corporate infrastructure servers and client workstations.
+
 <img width="957" height="564" alt="Screenshot 2026-07-04 162412" src="https://github.com/user-attachments/assets/4af90c6a-4964-4b4b-a474-4f1392525b0c" />
 ---
 
