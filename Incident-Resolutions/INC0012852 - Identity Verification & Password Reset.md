@@ -44,4 +44,5 @@ The account attributes were modified to enable the `User must change password at
 ## 📊 Post-Incident Metrics & Status
 *   **Verification Status:** Out-of-band token validated successfully.
 *   **User Verification:** User confirmed the temporary password authenticated perfectly. The system forced an immediate password update, and account access was restored.
-*   **Final Ticket Status:** Closed / Resolved <img width="1837" height="628" alt="image" src="https://github.com/user-attachments/assets/6a1d3782-b7e2-4493-ba3e-5b0b3f1f1040" />
+*   **Final Ticket Status:** Closed / Resolved <img width="1837" height="628" alt="image" src="https://github.com/user-attachments/assets/0d79a7fd-55c5-43da-92d1-f3c6b130fae8" />
+
