@@ -1,48 +1,43 @@
 # 🎫 Incident Resolution Log: INC0012847
 
 ## 🔴 Case Overview & Impact Analysis
-*   **Ticket ID:** `INC0012847`
-*   **Priority Level:** High (Remote Connectivity / File Share Fault)
-*   **User Affected:** Sarah Mitchell (Marketing Department)
-*   **Business Impact:** User unable to access critical marketing campaign files while working from home. Immediate threat to Q1 campaign material deadlines falling on EOD tomorrow.
+* **Ticket ID:** `INC0012847`
+* **Priority Level:** High
+* **User Affected:** Sarah Mitchell (Marketing Department)
+* **Business Impact:** Sarah is working from home and can't get into the Marketing shared drive. She has a deadline tomorrow for Q1 campaign materials, so she needs access back immediately.
 
 ---
 
-## 💻 Enterprise Infrastructure & Tooling Architecture
-The diagnostic execution, remote client configuration, and network share mapping for this incident were performed using the following enterprise-level environments and support tools:
-*   **ServiceDesk Simulator ITSM Suite:** Utilized as the core ticketing and communications platform to triage the user's remote connectivity symptoms and log the end-to-end incident lifecycle.
-*   **Secure Remote Access VPN Client:** Employed on the remote host endpoint to re-establish a secure, encrypted tunnel into the internal corporate network, enabling local resolution of private resource paths.
-*   **Windows File Explorer Network Shell:** Leveraged to manually re-mount the explicit administrative network path and bind it directly to a persistent local drive letter.
+## 💻 Software Used
+* **ServiceDesk Simulator:** Used to handle the user chat and manage the ticket lifecycle.
+* **VPN Client:** Used to connect Sarah's remote laptop back to the company network.
+* **Windows File Explorer:** Used to manually map the network drive path.
 
 ---
 
-## 🔍 Isolation & Diagnostic Workflow
-The user reported encountering a standard `"The network path was not found"` error when attempting to access local marketing share drives from her remote home network environment. 
-
-A logical layer-by-layer troubleshooting protocol was followed to narrow down the point of failure:
-1.  **Local Environment Validation:** Internet and email functions were verified as operating normally, ruling out a total ISP connection blackout or local physical Layer 1/2 home network failure.
-2.  **Logical Network Placement Analysis:** The user's mapped drives displayed a disconnected status. Remote users must have an active virtual path into the corporate subnet to resolve local server hostnames like `FILESERV01`. 
-3.  **Root Cause Determination:** The network path error surfaced because the remote machine lacked an established logical presence inside the corporate intranet. Initializing the VPN client established the required path, allowing the host to resolve internal file server namespaces.
+## 🔍 Troubleshooting Steps
+Sarah reported getting a "The network path was not found" error when trying to open her files. 
+1.  **Check Internet Connection:** I verified her internet and email were working fine, so it wasn't a local Wi-Fi drop.
+2.  **Check Drive Status:** Her mapped drives showed a disconnected status because she was working from home and wasn't on the corporate network yet.
+3.  **Find the Cause:** She didn't have her VPN turned on. Without the VPN, her computer can't reach the internal file server (`FILESERV01`).
 
 ---
 
-## 🛠️ Deployment & Engineering Resolution
-To completely restore user access and ensure persistent connectivity to the Marketing department assets, the following operations were executed on the endpoint:
+## 🛠️ Resolution
+I looked up the correct drive mapping path in the internal documentation and walked Sarah through fixing it.
 
-### 1. Intranet Tunnel Verification
-The secure corporate VPN client software was opened and authenticated. This action re-established the necessary underlying network routing topology, allowing the remote laptop to talk directly to internal core file servers.
+### 1. Connect to the VPN
+I told Sarah to open her VPN client and connect. Turning this on established the connection from her home network to the corporate servers.
 
-### 2. Manual SMB Share Remounting
-With the corporate network path active, File Explorer was opened to manually rebuild the broken path mount point:
-*   **Target Directory Path:** `\\FILESERV01\departments\Marketing`
-*   **Assigned Local Drive Letter:** `D:`
-<img width="1833" height="996" alt="image" src="https://github.com/user-attachments/assets/81c02312-8f78-4e58-acf3-497d94400b04" />
+### 2. Map the Network Drive
+Once the VPN was connected, I went into File Explorer on her machine to manually re-add the missing share:
+* **Drive Letter:** `D:`
+* **Folder Path:** `\\FILESERV01\departments\Marketing`
 
-The mapping sequence successfully reached the server across the active VPN tunnel, mounting the shared drive and validating the permissions profile attached to Sarah's user account.
+I hit finish, and the network drive mounted successfully without throwing any path errors.
 
 ---
 
-## 📊 Post-Incident Metrics & Status
-*   **Target File Server Namespace:** `\\FILESERV01\`
-*   **User Verification:** User confirmed that the network path error cleared immediately. Full read/write access to the raw Marketing share folder was restored, saving the Q1 campaign materials timeline.
-*   **Final Ticket Status:** Closed / Resolved <img width="1834" height="994" alt="image" src="https://github.com/user-attachments/assets/7810a2f0-5d92-44be-88f6-2b7d1dc94a13" />
+## 📊 Status
+* **User Verification:** Sarah checked her file explorer, confirmed she could see the files again, and closed out the chat.
+* **Final Ticket Status:** Closed / Resolved
