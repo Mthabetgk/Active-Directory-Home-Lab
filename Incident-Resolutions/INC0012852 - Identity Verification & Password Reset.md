@@ -1,49 +1,43 @@
 # 🎫 Incident Resolution Log: INC0012852
 
 ## 🔴 Case Overview & Impact Analysis
-*   **Ticket ID:** `INC0012852`
-*   **Priority Level:** Medium (Identity & Access Management)
-*   **User Affected:** Maria Garcia
-*   **Business Impact:** User completely locked out of corporate domain resources. Outage prevents daily operational tasks and application authentication.
+* **Ticket ID:** `INC0012852`
+* **Priority Level:** Medium
+* **User Affected:** Maria Garcia
+* **Business Impact:** Maria forgot her password and is locked out of her account, so she can't access any corporate apps or get her work done.
 
 ---
 
-## 💻 Enterprise Infrastructure & Tooling Architecture
-Identity triage and directory modifications were executed using these core systems:
-*   **ServiceDesk Simulator ITSM Suite:** Centralized service management platform used to coordinate live chat communication and log the security workflow.
-*   **Active Directory Domain Services (AD DS):** The authoritative identity database used to audit account states and push password modifications.
-*   **Multi-Factor Authentication (MFA) Gateway:** Utilized to push out-of-band verification tokens to validate user authenticity prior to account modification.
+## 💻 Software Used
+* **ServiceDesk Simulator:** Used to chat with the user and track the ticket details.
+* **Active Directory (AD Directory Tab):** Used to look up the user account, verify identity, and reset the password.
 
 ---
 
-## 🔍 Isolation & Diagnostic Workflow
-The user reported an inability to authenticate into the corporate network. Security policy dictates that identity must be validated through secondary out-of-band channels before any directory account changes occur.
-
-A strict security verification protocol was initiated:
-1.  **Token Generation:** A secure, time-sensitive verification code was dispatched to the user's registered mobile device.
-2.  **Identity Attestation:** The user successfully returned the correct token (`879928`) via the secure chat channel.
-3.  **Directory Audit:** Inspected the user profile properties within Active Directory. The account status was active, but password authentication flags required a manual administrative reset due to forgotten credentials.
+## 🔍 Troubleshooting Steps
+Maria reached out because she couldn't log in. 
+1.  **Identity Verification:** Before changing any password, I had to make sure it was actually her. I sent a verification code to her phone.
+2.  **Code Confirmation:** Maria received the code and gave me the correct number (`879928`) in our chat.
+3.  **Check Account Status:** I looked her up in the directory tool under the Authentication tab. Her account was verified and active, she just needed a new password.
 
 ---
 
-## 🛠️ Security Administrative Resolution
-Once identity validation cleared, directory services handled the credential lifecycle reset.
+## 🛠️ Resolution
 
-### 1. Active Directory Password Modification
-Navigated to the AD Directory interface, isolated Maria Garcia's account profile, and initiated the administrative reset tool. 
+### 1. Reset the Password
+Once her identity was verified, I clicked on **Reset Password** under her profile actions.
 
-### 2. Temporary Credential Generation
-A complex, compliant temporary password was assigned to the directory profile:
-*   **Temporary Value:** `Tempd4cjB7!`
+### 2. Provide Temporary Password
+I generated a temporary password for her to use to get back in:
+* **Temporary Password:** `Tempd4cjB7!`
 
-### 3. Enforcement of Next-Logon Policy
-The account attributes were modified to enable the `User must change password at next logon` flag. This action shifts cryptographic ownership back to the user immediately upon her next authentication loop, maintaining strict zero-trust compliance.
+### 3. Force Password Change
+I told her the temporary password and reminded her that she would need to change it immediately after logging in for security. 
 
 ---
 
-## 📊 Post-Incident Metrics & Status
-*   **Verification Status:** Out-of-band token validated successfully.
-*   **User Verification:** User confirmed the temporary password authenticated perfectly. The system forced an immediate password update, and account access was restored.
-*   **Final Ticket Status:** Closed / Resolved 
+## 📊 Status
+* **User Verification:** Maria tried the temporary password, confirmed it worked, logged in, and changed it to her own password.
+* **Final Ticket Status:** Closed / Resolved 
+
 <img width="920" height="493" alt="Screenshot 2026-07-10 152416" src="https://github.com/user-attachments/assets/924ae7b0-2acf-4a0a-ac8b-3abba55b6567" />
-
